@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-header">
+    <span class="kicker kicker-pub">publicação</span>
+    <h1>{{ page.title }}</h1>
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{% include data-pt.html date=page.date %}</time>
+      {%- if page.reading_time %} · {{ page.reading_time }} min de leitura{% endif -%}
+    </p>
+  </header>
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  <footer class="post-footer">
+    <a href="{{ '/publicacoes/' | relative_url }}">← todas as publicações</a>
+  </footer>
+</article>

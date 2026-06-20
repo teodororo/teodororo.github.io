@@ -1,0 +1,364 @@
+/* =====================================================================
+   TOKENS
+   ===================================================================== */
+:root {
+  --paper:   #EBF4EC;
+  --ink:     #1A1D1A;
+  --muted:   #6B7A6C;
+  --faint:   #C6D8C8;
+  --paper-2: #DDEADE;
+  --green:   #3D6844;
+
+  --display: Arial, Helvetica, sans-serif;
+  --serif:   Arial, Helvetica, sans-serif;
+
+  --measure: 660px;
+}
+
+/* =====================================================================
+   BASE
+   ===================================================================== */
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  line-height: 1.72;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+img { max-width: 100%; height: auto; display: block; }
+
+.container {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* =====================================================================
+   CABEÇALHO / NAVEGAÇÃO
+   ===================================================================== */
+.site-header {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+}
+
+.wordmark {
+  font-family: var(--display);
+  font-size: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  font-family: var(--serif);
+  font-size: 0.95rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--muted);
+  transition: color .15s;
+}
+
+.site-nav a:hover { color: var(--ink); }
+.site-nav a.is-active { color: var(--green); }
+
+/* =====================================================================
+   BLOCOS DA HOME
+   ===================================================================== */
+.home-block { padding: 2.75rem 0 0; }
+
+.block-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.block-title {
+  font-family: var(--display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0;
+}
+.block-title a { text-decoration: none; color: inherit; }
+
+.block-all {
+  font-family: var(--serif);
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.block-all:hover { color: var(--green); }
+
+/* =====================================================================
+   LISTAS (publicações e reviews)
+   ===================================================================== */
+.list { list-style: none; margin: 0; padding: 0; }
+
+.list-item a {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 0.2rem 1rem;
+  padding: 0.5rem 0;
+  text-decoration: none;
+}
+
+.list-item a:hover .item-title { color: var(--green); }
+
+.item-title {
+  font-family: var(--serif);
+  font-size: 1rem;
+}
+
+.item-date, .item-meta {
+  font-family: var(--serif);
+  font-size: 0.83rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.item-excerpt {
+  grid-column: 1 / -1;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.list-lg .item-title { font-size: 1rem; }
+.tirinha-card .item-title { font-size: 1rem; }
+
+.empty {
+  font-size: 0.9rem;
+  color: var(--muted);
+  padding: 0.5rem 0;
+}
+
+/* =====================================================================
+   TIRINHAS (grade)
+   ===================================================================== */
+.tirinha-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+.tirinha-grid-lg { grid-template-columns: repeat(2, 1fr); gap: 1.75rem; }
+
+.tirinha-card { text-decoration: none; display: block; }
+.tirinha-card img {
+  width: 100%;
+  border: 1px solid var(--faint);
+  border-radius: 3px;
+  background: #fff;
+  transition: opacity .15s;
+}
+.tirinha-card:hover img { opacity: 0.85; }
+.tirinha-card .item-title { display: block; margin-top: 0.5rem; font-size: 0.95rem; }
+.tirinha-card .item-date { display: block; }
+
+/* =====================================================================
+   CABEÇALHO DE PÁGINA / POST
+   ===================================================================== */
+.page-head { padding: 2.5rem 0 2rem; margin-bottom: 1.75rem; }
+.page-head h1 {
+  font-family: var(--display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0 0 0.3rem;
+}
+.page-head p { color: var(--muted); font-size: 0.92rem; margin: 0; }
+
+.post-header { padding: 2.5rem 0 1.5rem; }
+.post-header h1 {
+  font-family: var(--display);
+  font-size: clamp(1.3rem, 3.5vw, 1.6rem);
+  line-height: 1.15;
+  font-weight: 600;
+  margin: 0.4rem 0 0.6rem;
+}
+
+.kicker {
+  font-family: var(--serif);
+  font-size: 0.7rem;
+  font-weight: normal;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+.post-meta {
+  font-family: var(--serif);
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* =====================================================================
+   CONTEÚDO LONGO (prose)
+   ===================================================================== */
+.prose { padding: 0.25rem 0 1rem; }
+.prose > * + * { margin-top: 1.25rem; }
+.prose h2 {
+  font-family: var(--display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 0;
+}
+.prose h3 {
+  font-family: var(--display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+.prose a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--green);
+  color: inherit;
+}
+.prose a:hover { color: var(--green); }
+.prose blockquote {
+  border-left: 2px solid var(--faint);
+  margin-left: 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  font-style: italic;
+}
+.prose code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.82em;
+  background: var(--paper-2);
+  padding: 0.1em 0.35em;
+  border-radius: 2px;
+}
+.prose pre {
+  background: var(--ink);
+  color: #EFF2E8;
+  padding: 1rem 1.2rem;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+.prose pre code { background: none; padding: 0; color: inherit; font-size: 0.88em; }
+.prose img { border-radius: 3px; margin: 1.5rem 0; }
+.prose hr { border: none; border-top: 1px solid var(--faint); margin: 2.5rem 0; }
+.prose ul, .prose ol { padding-left: 1.4rem; }
+.prose li + li { margin-top: 0.3rem; }
+
+.post-footer {
+  margin-top: 2.5rem;
+  font-size: 0.88rem;
+}
+.post-footer a { color: var(--muted); text-decoration: none; }
+.post-footer a:hover { color: var(--green); }
+
+/* =====================================================================
+   TIRINHA (página individual)
+   ===================================================================== */
+.tirinha-figure { margin: 1.5rem 0; }
+.tirinha-figure img {
+  margin: 0 auto;
+  border: 1px solid var(--faint);
+  border-radius: 4px;
+  background: #fff;
+}
+.tirinha-figure figcaption {
+  font-size: 0.88rem;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 0.6rem;
+}
+
+/* =====================================================================
+   REVIEWS
+   ===================================================================== */
+.review-artist {
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--muted);
+  margin: 0.2rem 0 0;
+}
+.review-quote {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--muted);
+  margin: 0.55rem 0 0;
+}
+.review-meta-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.65rem 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+  display: block;
+}
+.review-date {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0.55rem 0 0;
+}
+
+.review-group { margin-bottom: 2rem; }
+.review-group-title {
+  font-size: 0.75rem;
+  font-weight: normal;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+
+/* =====================================================================
+   RODAPÉ
+   ===================================================================== */
+.site-footer {
+  max-width: var(--measure);
+  margin: 5rem auto 0;
+  padding: 1.25rem 1.25rem 3rem;
+  border-top: 1px solid var(--faint);
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.footer-links { display: flex; gap: 1.2rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+.footer-links a { color: var(--muted); text-decoration: none; }
+.footer-links a:hover { color: var(--green); }
+.footer-meta { margin: 0; }
+
+/* =====================================================================
+   ACESSIBILIDADE / RESPONSIVO
+   ===================================================================== */
+a:focus-visible, .tirinha-card:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (max-width: 560px) {
+  body { font-size: 1rem; }
+  .tirinha-grid, .tirinha-grid-lg { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .site-header { padding-top: 1.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

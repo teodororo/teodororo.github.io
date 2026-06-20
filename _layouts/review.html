@@ -1,0 +1,60 @@
+---
+layout: default
+---
+{%- case page.tipo -%}
+  {%- when 'filme' -%}{%- assign tipo_label = 'filme'  -%}{%- assign schema_type = 'Movie'        -%}
+  {%- when 'livro' -%}{%- assign tipo_label = 'livro'  -%}{%- assign schema_type = 'Book'         -%}
+  {%- when 'álbum' -%}{%- assign tipo_label = 'álbum'  -%}{%- assign schema_type = 'MusicAlbum'   -%}
+  {%- else          -%}{%- assign tipo_label = 'review' -%}{%- assign schema_type = 'CreativeWork' -%}
+{%- endcase -%}
+
+<article class="review-single">
+  <header class="post-header">
+    <span class="kicker kicker-rev">{{ tipo_label }}</span>
+    <h1>{{ page.title }}</h1>
+
+    {%- if page.tipo == 'álbum' -%}
+      {%- if page.artista %}<p class="review-artist">{{ page.artista }}</p>{% endif -%}
+      {%- if page.citacao %}<p class="review-quote">"{{ page.citacao }}"</p>{% endif -%}
+      <ul class="review-meta-list">
+        {%- if page.pais %}<li>país: {{ page.pais }}</li>{% endif -%}
+        {%- if page.faixa_favorita %}<li>faixa favorita: {{ page.faixa_favorita }}</li>{% endif -%}
+        {%- if page.ano %}<li>ano: {{ page.ano }}</li>{% endif -%}
+      </ul>
+    {%- elsif page.tipo == 'filme' -%}
+      {%- if page.diretor %}<p class="review-artist">diretor: {{ page.diretor }}</p>{% endif -%}
+      {%- if page.citacao %}<p class="review-quote">"{{ page.citacao }}"</p>{% endif -%}
+      <ul class="review-meta-list">
+        {%- if page.pais %}<li>país: {{ page.pais }}</li>{% endif -%}
+        {%- if page.ano %}<li>ano: {{ page.ano }}</li>{% endif -%}
+      </ul>
+    {%- else -%}
+      {%- if page.autor %}<p class="review-artist">{{ page.autor }}</p>{% endif -%}
+      {%- if page.citacao %}<p class="review-quote">"{{ page.citacao }}"</p>{% endif -%}
+      <ul class="review-meta-list">
+        {%- if page.pais %}<li>país: {{ page.pais }}</li>{% endif -%}
+        {%- if page.ano %}<li>ano: {{ page.ano }}</li>{% endif -%}
+      </ul>
+    {%- endif -%}
+  </header>
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  <p class="review-date"><time datetime="{{ page.date | date_to_xmlschema }}">{% include data-pt.html date=page.date %}</time></p>
+
+  <footer class="post-footer">
+    <a href="{{ '/reviews/' | relative_url }}">← todas as reviews</a>
+  </footer>
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": { "@type": "{{ schema_type }}", "name": {{ page.title | jsonify }} },
+  "author": { "@type": "Person", "name": {{ site.author | jsonify }} },
+  "datePublished": "{{ page.date | date_to_xmlschema }}"
+}
+</script>

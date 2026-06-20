@@ -1,0 +1,14 @@
+<header class="site-header">
+  <a class="wordmark" href="{{ '/' | relative_url }}">
+    {{ site.title }}
+  </a>
+
+  <nav class="site-nav" aria-label="navegação principal">
+    {%- assign p = '/publicacoes/' | relative_url -%}
+    {%- assign t = '/tirinhas/'    | relative_url -%}
+    {%- assign r = '/reviews/'     | relative_url -%}
+    <a href="{{ p }}" class="nav-pub {% if page.url contains '/publicacoes' %}is-active{% endif %}">publicações</a>
+    <a href="{{ t }}" class="nav-tir {% if page.url contains '/tirinhas'    %}is-active{% endif %}">tirinhas</a>
+    <a href="{{ r }}" class="nav-rev {% if page.url contains '/reviews'      %}is-active{% endif %}">reviews</a>
+  </nav>
+</header>

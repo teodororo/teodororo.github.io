@@ -1,0 +1,23 @@
+---
+layout: default
+title: "tirinhas"
+permalink: /tirinhas/
+---
+
+<header class="page-head">
+  <h1 class="nav-tir">tirinhas</h1>
+  <p>inspirações: laerte, jamie zawinski e o pior filme do mundo (la la land). </p>
+</header>
+
+{%- assign tirinhas = site.tirinhas | sort: 'date' | reverse -%}
+<div class="tirinha-grid tirinha-grid-lg">
+  {%- for t in tirinhas -%}
+  <a class="tirinha-card" href="{{ t.url | relative_url }}">
+    <img src="{{ t.image }}" alt="{{ t.alt | default: t.title }}" loading="lazy">
+    <span class="item-title">{{ t.title }}</span>
+    <time class="item-date">{{ t.date | date: "%d/%m/%Y" }}</time>
+  </a>
+  {%- else -%}
+  <p class="empty">nenhuma tirinha ainda</p>
+  {%- endfor -%}
+</div>

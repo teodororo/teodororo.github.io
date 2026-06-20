@@ -1,0 +1,40 @@
+---
+layout: default
+title: "reviews"
+permalink: /reviews/
+---
+
+<header class="page-head">
+  <h1 class="nav-rev">reviews</h1>
+  <p><i>that's my opinion!!!</i></p>
+</header>
+
+{%- assign reviews = site.reviews | sort: 'date' | reverse -%}
+{%- assign tipos = "filme,livro,álbum" | split: "," -%}
+{%- assign labels = "filmes,livros,álbuns" | split: "," -%}
+
+{%- for tipo in tipos -%}
+  {%- assign grupo = reviews | where: "tipo", tipo -%}
+  {%- if grupo.size > 0 -%}
+  <section class="review-group">
+    <h2 class="review-group-title">{{ labels[forloop.index0] }}</h2>
+    <ul class="list">
+      {%- for rev in grupo -%}
+      <li class="list-item">
+        <a href="{{ rev.url | relative_url }}">
+          <span class="item-title">{{ rev.title }}</span>
+          <span class="item-meta">
+            {%- if rev.artista %}{{ rev.artista }}{% elsif rev.autor %}{{ rev.autor }}{% elsif rev.diretor %}{{ rev.diretor }}{% endif -%}
+            {%- if rev.ano %} · {{ rev.ano }}{% endif -%}
+          </span>
+        </a>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </section>
+  {%- endif -%}
+{%- endfor -%}
+
+{%- if reviews.size == 0 -%}
+<p class="empty">nenhuma review ainda</p>
+{%- endif -%}

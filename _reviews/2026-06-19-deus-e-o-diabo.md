@@ -1,0 +1,16 @@
+---
+title: "deus e o diabo na terra do sol"
+tipo: filme
+diretor: "glauber rocha"
+citacao: "corisco, o diabo de lampião"
+pais: "brasil"
+ano: 1964
+date: 2026-06-19
+description: "review do filme deus e o diabo na terra do sol de glauber rocha."
+---
+
+com um lindo pôster de rogério duarte, cordéis cantados por sérgio ricardo e trilha sonora por heitor villa-lobos, glauber rocha costura, em "deus e o diabo na terra do sol", o sertão como um palco mágico. nele, o sol é um ator sempre presente: inclemente e, por vezes, o principal culpado pelas desgraças que assolam o nordeste. sem esperanças nem perspectivas, pessoas comuns largam tudo para seguir um beato que lhes promete, com muita convicção, que "o sertão vai virar mar, e o mar vai virar sertão", frase realmente dita por antônio conselheiro. e assim como foi em canudos, a multidão de miseráveis chama atenção das autoridades e, principalmente, da igreja, que, temendo um segundo massacre, contrata um mercenário chamado antônio das mortes para dar um fim no beato. apenas com esse roteiro, "deus e o diabo na terra do sol" já se consagraria como um marco no cinema novo. porém, glauber rocha vai além e inova a cada composição de cena, transformando a longa procissão em algo tão marcante quanto a travessia do mar vermelho pelos hebreus. em uma das cenas mais marcantes, o vaqueiro manuel carrega uma pedra enorme morro acima: quanto maior o sofrimento, maior a salvação. pessoalmente, fiquei muito comovida, mais ainda quando descobri que a pedra era real e, portanto, o ator geraldo del rey não estava atuando, e sim sentindo dor de verdade. pelo menos é isso que diz a biografia de glauber rocha escrita por nelson motta:
+
+>Penalizado com seu sofrimento, Waltinho (assistente de direção de Glauber) sugeriu que Geraldo carregasse uma pedra menor, ou só a colocasse na cabeça quando a câmera começasse a rodar. Estoico como um fanático, Geraldo recusou tudo. Sofreria na própria carne o calvário do vaqueiro Manuel. No fim do dia, Geraldo estava exausto e ferido (…) O peso da pedra comprimiu durante horas seus músculos e nervos do pescoço e o imobilizou por vários dias.
+
+ainda que seja uma ficção, "deus e o diabo na terra do sol" é muito crível em seus retratos. o massacre ocorre. a injustiça prevalece. o messias não existe, mas a fé persiste e é o único alicerce que mantém corisco em pé. manuel, depois de muito caminhar, corre em direção ao mar enquanto sérgio ricardo canta "assim mal dividido, esse mundo anda errado, a terra é do homem, não é de deus nem do diabo, não é de deus, não é de deus, não é de deus nem do diabo". perseguido e exilado durante a ditadura militar, glauber rocha foi incluído na lista de pessoas marcadas para morrer. engraçado, pois suas obras expunham justamente a ausência do estado. faleceu, aos 42 anos, em decorrência de uma doença contraída em portugal. sua mãe, no entanto, contesta: "meu filho não morreu de doença. ninguém me convence. ele não estava doente. ele morreu de tristeza. não tenho medo de publicar isso em jornal: meu filho morreu de brasil".

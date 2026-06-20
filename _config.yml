@@ -1,0 +1,47 @@
+title: "pinko.exe"
+tagline: "oiiiiiiiiiiiiiiiiii"
+description: >-
+  Blog pessoal de Pinko: textos longos, tirinhas e reviews de filmes, livros e álbuns.
+author: "pinko"
+lang: pt-BR
+url: "https://teodororo.github.io"
+baseurl: ""
+social:
+  github: teodororo
+  instagram: pinko.exe
+
+google_analytics: "GTM-5ZZ6VQSZ"
+
+# coleções: cada "tirinha" e cada "review" é um arquivo dentro da pasta
+collections:
+  tirinhas:
+    output: true
+    permalink: /tirinhas/:name/
+  reviews:
+    output: true
+    permalink: /reviews/:name/
+
+# valores padrão
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+  - scope: { path: "", type: tirinhas }
+    values: { layout: tirinha }
+  - scope: { path: "", type: reviews }
+    values: { layout: review }
+
+permalink: /publicacoes/:title/
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+feed:
+  path: feed.xml
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor

@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<article class="tirinha-single">
+  <header class="post-header">
+    <span class="kicker kicker-tir">tirinha</span>
+    <h1>{{ page.title }}</h1>
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{% include data-pt.html date=page.date %}</time>
+    </p>
+  </header>
+
+  <figure class="tirinha-figure">
+    <img src="{{ page.image }}" alt="{{ page.alt | default: page.title }}" loading="lazy">
+    {%- if page.legenda %}<figcaption>{{ page.legenda }}</figcaption>{% endif -%}
+  </figure>
+
+  {%- if content != "" -%}
+  <div class="prose">{{ content }}</div>
+  {%- endif -%}
+
+  <footer class="post-footer">
+    <a href="{{ '/tirinhas/' | relative_url }}">← todas as tirinhas</a>
+  </footer>
+</article>

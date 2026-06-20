@@ -1,0 +1,54 @@
+---
+layout: default
+title: "início"
+description: "at least as deep as the pacific ocean"
+---
+<section class="home-block">
+  <div class="block-head">
+    <h2 class="block-title nav-pub"><a href="{{ '/publicacoes/' | relative_url }}">publicações</a></h2>
+    <a class="block-all" href="{{ '/publicacoes/' | relative_url }}">ver todas →</a>
+  </div>
+  <ul class="list">
+    {%- for post in site.posts limit:4 -%}
+    <li class="list-item">
+      <a href="{{ post.url | relative_url }}">
+        <span class="item-title">{{ post.title }}</span>
+        <time class="item-date">{{ post.date | date: "%d/%m/%Y" }}</time>
+      </a>
+    </li>
+    {%- endfor -%}
+  </ul>
+</section>
+
+<section class="home-block">
+  <div class="block-head">
+    <h2 class="block-title nav-tir"><a href="{{ '/tirinhas/' | relative_url }}">tirinhas</a></h2>
+    <a class="block-all" href="{{ '/tirinhas/' | relative_url }}">ver todas →</a>
+  </div>
+  {%- assign tirinhas = site.tirinhas | sort: 'date' | reverse -%}
+  <div class="tirinha-grid">
+    {%- for t in tirinhas limit:3 -%}
+    <a class="tirinha-card" href="{{ t.url | relative_url }}">
+      <img src="{{ t.image }}" alt="{{ t.alt | default: t.title }}" loading="lazy">
+    </a>
+    {%- endfor -%}
+  </div>
+</section>
+
+<section class="home-block">
+  <div class="block-head">
+    <h2 class="block-title nav-rev"><a href="{{ '/reviews/' | relative_url }}">reviews</a></h2>
+    <a class="block-all" href="{{ '/reviews/' | relative_url }}">ver todas →</a>
+  </div>
+  {%- assign reviews = site.reviews | sort: 'date' | reverse -%}
+  <ul class="list">
+    {%- for rev in reviews limit:4 -%}
+    <li class="list-item">
+      <a href="{{ rev.url | relative_url }}">
+        <span class="item-title">{{ rev.title }}</span>
+        <span class="item-meta">{{ rev.tipo }}{%- if rev.artista %} · {{ rev.artista }}{% elsif rev.autor %} · {{ rev.autor }}{% endif -%}</span>
+      </a>
+    </li>
+    {%- endfor -%}
+  </ul>
+</section>

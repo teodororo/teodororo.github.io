@@ -1,0 +1,24 @@
+---
+layout: default
+title: "publicações"
+permalink: /publicacoes/
+---
+
+<header class="page-head">
+  <h1 class="nav-pub">publicações</h1>
+  <p>balbucios (falas confusas, sem sentido)</p>
+</header>
+
+<ul class="list list-lg">
+  {%- for post in site.posts -%}
+  <li class="list-item">
+    <a href="{{ post.url | relative_url }}">
+      <span class="item-title">{{ post.title }}</span>
+      <time class="item-date">{% include data-pt.html date=post.date %}</time>
+      {%- if post.excerpt %}<span class="item-excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</span>{% endif -%}
+    </a>
+  </li>
+  {%- else -%}
+  <li class="empty">nenhuma publicação ainda</li>
+  {%- endfor -%}
+</ul>

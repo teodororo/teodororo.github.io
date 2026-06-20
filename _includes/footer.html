@@ -1,0 +1,8 @@
+<footer class="site-footer">
+  <div class="footer-links">
+    {%- if site.social.github != "" -%}<a href="https://github.com/{{ site.social.github }}">github</a>{%- endif -%}
+    {%- if site.social.instagram != "" -%}<a href="https://instagram.com/{{ site.social.instagram }}">instagram</a>{%- endif -%}
+    <a href="{{ '/feed.xml' | relative_url }}">rss</a>
+  </div>
+  <p class="footer-meta">© {{ 'now' | date: "%Y" }} {{ site.title }} · feito com jekyll · parque 10 de novembro</p>
+</footer>
